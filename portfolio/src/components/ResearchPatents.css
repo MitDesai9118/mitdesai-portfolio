@@ -1,0 +1,78 @@
+.rp-console {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.rp-body {
+  padding: 1.8rem;
+  background: #060609;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+}
+
+.editor-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.editor-line .line-num {
+  color: var(--text-comment);
+  user-select: none;
+  min-width: 1.5rem;
+  text-align: right;
+  font-size: 0.82rem;
+}
+
+.editor-line .line-content {
+  flex-grow: 1;
+}
+
+.editor-line .line-content.comment {
+  color: var(--text-comment);
+}
+
+.editor-line .line-content.title-text {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 1.15rem;
+  font-family: var(--font-mono);
+  background: linear-gradient(135deg, var(--text-primary) 70%, var(--accent-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.editor-line .line-content.meta-text {
+  color: var(--text-secondary);
+}
+
+.editor-line .line-content.meta-text .keyword {
+  color: var(--accent-secondary);
+}
+
+.editor-line .line-content.desc-text {
+  color: var(--text-secondary);
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.editor-line.abstract-line {
+  margin: 0.5rem 0;
+}
+
+.editor-line.btn-line {
+  margin-top: 1.2rem;
+}
+
+.editor-line.btn-line .btn-download {
+  font-size: 0.82rem;
+  padding: 0.5rem 1.1rem;
+}
+
+
+

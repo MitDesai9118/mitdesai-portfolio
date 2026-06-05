@@ -1,0 +1,85 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 0;
+  z-index: 1000;
+  background: rgba(4, 4, 6, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  transition: var(--transition);
+}
+
+.navbar.scrolled {
+  padding: 0.9rem 0;
+  background: rgba(9, 10, 15, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+}
+
+.logo span {
+  color: var(--accent-color);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a:not(.btn) {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.01em;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-links a:not(.btn)::before {
+  content: "./";
+  color: var(--accent-color);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: var(--transition);
+}
+
+.nav-links a:not(.btn):hover {
+  color: var(--text-primary);
+}
+
+.nav-links a:not(.btn):hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.nav-links .btn {
+  padding: 0.45rem 1rem;
+  font-size: 0.8rem;
+  border-radius: var(--border-radius-sm);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}
