@@ -74,20 +74,20 @@ const Contact = () => {
               <div className="console-status">ready</div>
             </div>
             <div className="console-body form-body">
-              <form onSubmit={(e) => e.preventDefault()} className="simplified-contact-form">
+              <form action="mailto:mitdesai9118@gmail.com" method="POST" encType="text/plain" className="simplified-contact-form">
                 <div className="form-group">
                   <label htmlFor="name" className="form-label">Name</label>
-                  <input type="text" id="name" className="form-input" placeholder="Your name" required />
+                  <input type="text" id="name" name="name" className="form-input" placeholder="Your name" required />
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="email" className="form-label">Email Address</label>
-                  <input type="email" id="email" className="form-input" placeholder="Your email address" required />
+                  <input type="email" id="email" name="email" className="form-input" placeholder="Your email address" required />
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="message" className="form-label">Message</label>
-                  <textarea id="message" rows="4" className="form-input" placeholder="Let me know how we can collaborate..." required></textarea>
+                  <textarea id="message" name="message" rows="4" className="form-input" placeholder="Let me know how we can collaborate..." required></textarea>
                 </div>
 
                 <button type="submit" className="btn btn-primary submit-btn">
