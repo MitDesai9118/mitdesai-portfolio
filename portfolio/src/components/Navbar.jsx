@@ -3,6 +3,7 @@ import './Navbar.css';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,11 +17,23 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-content">
         <a href="#" className="logo">Mit.Desai<span>.</span></a>
-        <ul className="nav-links">
-          <li><a href="#projects">projects.js</a></li>
-          <li><a href="#research">publications.md</a></li>
-          <li><a href="#certificates">patents_certs.json</a></li>
-          <li><a href="#contact" className="btn btn-primary">contact.sh</a></li>
+        
+        {/* Mobile Hamburger Toggle */}
+        <button 
+          className={`nav-toggle ${isOpen ? 'active' : ''}`} 
+          onClick={() => setIsOpen(!isOpen)} 
+          aria-label="Toggle Menu"
+        >
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </button>
+
+        <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
+          <li><a href="#projects" onClick={() => setIsOpen(false)}>projects.js</a></li>
+          <li><a href="#research" onClick={() => setIsOpen(false)}>publications.md</a></li>
+          <li><a href="#certificates" onClick={() => setIsOpen(false)}>patents_certs.json</a></li>
+          <li><a href="#contact" className="btn btn-primary" onClick={() => setIsOpen(false)}>contact.sh</a></li>
         </ul>
       </div>
     </nav>
