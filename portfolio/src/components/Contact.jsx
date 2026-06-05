@@ -3,6 +3,18 @@ import { FaMapMarkerAlt, FaEnvelope, FaPaperPlane } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const message = e.target.message.value;
+    
+    const subject = encodeURIComponent(`Collaboration Inquiry from ${name}`);
+    const body = encodeURIComponent(`Hi Mit,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+    
+    window.location.href = `mailto:mitdesai9118@gmail.com?subject=${subject}&body=${body}`;
+  };
+
   return (
     <section id="contact" className="contact-section">
       <div className="container">
@@ -74,7 +86,7 @@ const Contact = () => {
               <div className="console-status">ready</div>
             </div>
             <div className="console-body form-body">
-              <form action="mailto:mitdesai9118@gmail.com" method="POST" encType="text/plain" className="simplified-contact-form">
+              <form onSubmit={handleSubmit} className="simplified-contact-form">
                 <div className="form-group">
                   <label htmlFor="name" className="form-label">Name</label>
                   <input type="text" id="name" name="name" className="form-input" placeholder="Your name" required />
