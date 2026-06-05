@@ -12,7 +12,9 @@ const Contact = () => {
     const subject = encodeURIComponent(`Collaboration Inquiry from ${name}`);
     const body = encodeURIComponent(`Hi Mit,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
     
-    window.location.href = `mailto:mitdesai9118@gmail.com?subject=${subject}&body=${body}`;
+    // Opens Gmail web compose directly in a new browser tab
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=mitdesai9118@gmail.com&su=${subject}&body=${body}`;
+    window.open(gmailUrl, '_blank');
   };
 
   return (
